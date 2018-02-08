@@ -5,6 +5,8 @@ import Divider from "material-ui/Divider";
 import Paper from "material-ui/Paper";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import RaisedButton from 'material-ui/RaisedButton'
+import scrollToComponent from 'react-scroll-to-component';
 
 // IMPORT COMPONENTS
 import Header from "../Header/Header";
@@ -54,8 +56,15 @@ class Home extends Component {
               alt="logo"
             />
           </div>
+          <RaisedButton
+            primary={true}
+            labelColor={"#fbfffe"}
+            label={"Shop Now"}
+            onClick={() => scrollToComponent(this.Store)}
+             style={{marginBottom: "5%"}}
+           />
         </div>
-        <div className="music-store" id="musicStore">
+        <div className="music-store" id="musicStore" ref={(div) => {this.Store = div}}>
           <h1 style={{ color: "white", fontSize: "2.5em", fontWeight: "bold" }}>
             BEAT STORE
           </h1>
