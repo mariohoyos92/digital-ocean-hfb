@@ -65,7 +65,7 @@ class MusicStore extends Component {
     this.setState({ open: false });
   }
 
-  handleAddToCart(beat, e) {
+ handleAddToCart(beat, e) {
     e.stopPropagation();
     if (this.state.cart.indexOf(beat) === -1) {
       axios
@@ -73,9 +73,12 @@ class MusicStore extends Component {
         .then(response => {
           this.setState({ cart: response.data.tracks });
         })
-        .catch(() => alert("This beat is already in your cart!"));
+        .catch((console.log));
     } else {
-      alert("This Item Is Already In Your Cart!");
+      axios
+      .delete(`/api/cart/${beat}`)
+      .then(response => this.setState({ cart: response.data.tracks }))
+      .catch(console.log);
     }
   }
 
@@ -199,7 +202,7 @@ class MusicStore extends Component {
           <div className="store-item-right">
             <span>$10.00</span>
             <IconButton
-              iconClassName="fa fa-plus-square"
+              iconClassName={this.state.cart.indexOf(track.title) === -1 ? "fa fa-plus-square" : "fa fa-minus-square"}
               iconStyle={
                 this.state.cart.indexOf(track.title) === -1
                   ? {
@@ -208,7 +211,7 @@ class MusicStore extends Component {
                     }
                   : { color: "#faa916" }
               }
-              tooltip={"Add To Cart"}
+              tooltip={this.state.cart.indexOf(track.title) === -1 ? "Add To Cart" : "Remove From Cart"}
               touch={true}
               tooltipPosition="bottom-left"
               onClick={e => this.handleAddToCart(track.title, e)}
@@ -241,7 +244,7 @@ class MusicStore extends Component {
             <p className="player-info">Total Plays: 1.2M </p>
           </div>
           <div className="store-header-right">
-            <span>${10 * this.state.cart.length}.00</span>
+            <span>${10 * this.state.cart.length}.00 (usd)</span>
             <IconButton
               iconClassName="fa fa-shopping-cart"
               iconStyle={{ iconHoverColor: "#faa916" }}
