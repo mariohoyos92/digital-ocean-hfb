@@ -15,6 +15,7 @@ import Testimonials from "../Testimonials/Testimonials";
 
 // IMPORT CSS
 import "./Home.css";
+import splashLogo from '../../assets/HassleFreeBeats (2).png'
 
 class Home extends Component {
   constructor(props) {
@@ -52,7 +53,7 @@ class Home extends Component {
           <div className="splash-logo">
             <img
               className="logo"
-              src="https://s3.us-east-2.amazonaws.com/hassle-free-beats-untagged-audio/HassleFreeBeats.png"
+              src={splashLogo}
               alt="logo"
             />
           </div>
