@@ -11,7 +11,7 @@ import axios from "axios";
 import Cart from "../Cart/Cart";
 
 import "./MusicStore.css";
-import logo from '../../assets/header-logo.png'
+import logo from '../../assets/header-logo.jpg'
 
 class MusicStore extends Component {
   constructor(props) {
