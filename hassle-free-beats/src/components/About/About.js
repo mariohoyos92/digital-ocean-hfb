@@ -18,7 +18,7 @@ class About extends Component {
           src={aboutLogo}
           alt="logo"
         />
-        <h1>We Exist To Let You Be Creative</h1>
+        <h1>Buy Rap and Hip Hop Beats Without All The Hassle</h1>
         <p className="about-blurb">
           Hassle-Free-Beats was created with the vision of allowing artists to
           channel their full creativity without worrying about license terms and
