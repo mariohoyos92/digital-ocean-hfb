@@ -72,8 +72,8 @@ export default class CheckoutView extends Component {
           );
         })
       ) : (
-        <p>Your Cart is Empty </p>
-      );
+          <p>Your Cart is Empty </p>
+        );
 
     let loginView = this.state.loggedIn ? (
       <div>
@@ -85,41 +85,41 @@ export default class CheckoutView extends Component {
         </p>
       </div>
     ) : (
-      <div>
-        <h1> Login </h1>
-        <Divider />
-        <p className="login-paragraph">
-          If you would like to be able to access the download links for this
-          order and any in the future, please Login/Register using the button
-          below. You will still have access to the download links in your email
-          for as long as you keep our email if you do not want to make an
-          account.
+        <div>
+          <h1> Login </h1>
+          <Divider />
+          <p className="login-paragraph">
+            If you would like to be able to access the download links for this
+            order and any in the future, please Login/Register using the button
+            below. You will still have access to the download links in your email
+            for as long as you keep our email if you do not want to make an
+            account.
         </p>
-        <LoginButton />
-        <br />
-        <br />
-        <br />
-        <span>
-          ** Protected with{" "}
-          <a
-            href="https://auth0.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="https://s3.us-east-2.amazonaws.com/hassle-free-beats-untagged-audio/logo-100-grey.png"
-              alt="auth0 logo"
-              className="auth0logo"
-            />
-          </a>{" "}
-          **
+          <LoginButton />
+          <br />
+          <br />
+          <br />
+          <span>
+            ** Protected with{" "}
+            <a
+              href="https://auth0.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://s3.us-east-2.amazonaws.com/hassle-free-beats-untagged-audio/logo-100-grey.png"
+                alt="auth0 logo"
+                className="auth0logo"
+              />
+            </a>{" "}
+            **
         </span>
-      </div>
-    );
+        </div>
+      );
 
     return (
       <div className="checkout-container">
-        <div className="login-option">
+        <div className="login-option" style={{ display: "none" }}>
           <Card className="checkout-card">{loginView}</Card>
         </div>
         <div className="checkout-cart">

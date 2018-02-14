@@ -246,7 +246,7 @@ class MusicStore extends Component {
               onClick={this.handleOpen}
             />
             <Dialog
-              title="Here are the beats you've added to your cart!"
+              title="Your Cart"
               actions={[
                 <FlatButton
                   label="Continue Shopping"
@@ -254,10 +254,10 @@ class MusicStore extends Component {
                   onClick={this.handleClose}
                 />,
                 <Link to={"/checkout"}>
-                  <FlatButton
+                  <RaisedButton
                     label="Checkout Now"
                     primary={true}
-                    keyboardFocused={true}
+
                   />
                 </Link>
               ]}
@@ -272,6 +272,7 @@ class MusicStore extends Component {
                 primary={true}
                 labelColor={"#fbfffe"}
                 label={"CHECKOUT"}
+                style={{ boxShadow: "none" }}
               />
             </Link>
           </div>

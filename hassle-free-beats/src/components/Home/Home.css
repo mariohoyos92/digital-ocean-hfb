@@ -92,6 +92,7 @@
 
 .license-header {
   color: #96031a;
+  font-size: 1.7em;
 }
 
 .license-divide {
@@ -184,6 +185,13 @@
 
 
 .promotion{
+  font-size: 1.5em;
+}
+
+.testimonial-header {
+  font-size: 2em;
+}
+.bottom-portion{
   font-size: 1.5em;
 }
 }

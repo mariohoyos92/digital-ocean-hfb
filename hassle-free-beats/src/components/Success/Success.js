@@ -18,7 +18,7 @@ class Success extends Component {
       purchases: []
     };
   }
-  // LIFESTYLE FUNCTIONS
+  // LIFESTYLE FUNCTION
   componentDidMount() {
     axios
       .get("/api/purchases")

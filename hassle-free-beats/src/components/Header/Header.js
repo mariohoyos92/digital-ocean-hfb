@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 // IMPORT MODULES
 import { Link } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
+import RaisedButton from 'material-ui/RaisedButton'
 import FlatButton from "material-ui/FlatButton";
 import Drawer from "material-ui/Drawer";
 import MenuItem from "material-ui/MenuItem";
@@ -50,7 +52,7 @@ class Header extends Component {
           className="header-drawer"
           onRequestChange={this.handleDrawer}
           containerStyle={{
-          display: "flex",
+            display: "flex",
             flexDirection: "column",
             justifyContent: "flex-start",
             paddingTop: '10%',
@@ -77,7 +79,9 @@ class Header extends Component {
             </Link>
           </MenuItem>
           <MenuItem>
-            <LoginButton />
+            <HashLink to="/#musicStore">
+              <RaisedButton primary={true} labelColor={"#fbfffe"} label={"Shop Now"} style={{ boxShadow: "none" }} />
+            </HashLink>
           </MenuItem>
         </Drawer>
         <div className="header-button">
@@ -93,7 +97,9 @@ class Header extends Component {
           <Link to="contact">
             <FlatButton style={{ color: "white" }} label="Contact" />
           </Link>
-          <LoginButton />{" "}
+          <HashLink to="/#musicStore">
+            <RaisedButton primary={true} labelColor={"#fbfffe"} label={"Shop Now"} style={{ boxShadow: "none" }} />
+          </HashLink>{" "}
         </div>
       </div>
     );

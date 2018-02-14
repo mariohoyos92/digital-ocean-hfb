@@ -63,8 +63,8 @@ class Cart extends Component {
           );
         })
       ) : (
-        <p>Your Cart is Empty </p>
-      );
+          <p>Your Cart is Empty </p>
+        );
     return (
       <div>
         <div>{cartDisplay}</div>
