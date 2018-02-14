@@ -20,7 +20,7 @@ class Checkout extends Component {
   }
 
   errorPayment(data) {
-    alert("Payment Error");
+    alert("That Card Was Declined, Please Try Again");
   }
 
   onToken(amount, description) {

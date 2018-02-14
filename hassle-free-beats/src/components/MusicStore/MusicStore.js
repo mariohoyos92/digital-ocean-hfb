@@ -6,13 +6,17 @@ import FlatButton from "material-ui/FlatButton";
 import IconButton from "material-ui/IconButton";
 import Dialog from "material-ui/Dialog";
 import axios from "axios";
+import ReactPixel from "react-facebook-pixel";
+
+import { pixelId } from "../../config";
 
 import Cart from "../Cart/Cart";
-import StoreItem from './StoreItem/StoreItem'
+import StoreItem from "./StoreItem/StoreItem";
 
 import "./MusicStore.css";
-import logo from '../../assets/header-logo-min.jpg'
+import logo from "../../assets/header-logo-min.jpg";
 
+ReactPixel.init(pixelId);
 class MusicStore extends Component {
   constructor(props) {
     super(props);
@@ -68,7 +72,7 @@ class MusicStore extends Component {
     this.setState({ open: false });
   }
 
- handleAddToCart(beat, e) {
+  handleAddToCart(beat, e) {
     e.stopPropagation();
     if (this.state.cart.indexOf(beat) === -1) {
       axios
@@ -76,13 +80,17 @@ class MusicStore extends Component {
         .then(response => {
           this.setState({ cart: response.data.tracks });
         })
-        .catch((console.log));
+        .catch(console.log);
     } else {
       axios
-      .delete(`/api/cart/${beat}`)
-      .then(response => this.setState({ cart: response.data.tracks }))
-      .catch(console.log);
+        .delete(`/api/cart/${beat}`)
+        .then(response => this.setState({ cart: response.data.tracks }))
+        .catch(console.log);
     }
+
+    ReactPixel.trackCustom("add beat to cart", {
+      beat_title: beat
+    });
   }
 
   updateProgress() {
@@ -167,6 +175,9 @@ class MusicStore extends Component {
         this.audioContainer.play();
       }
     );
+    ReactPixel.trackCustom("listen to song", {
+      title: this.props.playlist[index].title
+    });
   }
 
   _formatTime(time) {
@@ -188,7 +199,15 @@ class MusicStore extends Component {
     };
 
     const storeItems = playlist.map(track => (
-      <StoreItem track={track} playlist = {playlist} activeMusicIndex={activeMusicIndex} handleAddToCart={this.handleAddToCart} handleSelect={this.handleSelect} cart={this.state.cart} />
+      <StoreItem
+        track={track}
+        playlist={playlist}
+        activeMusicIndex={activeMusicIndex}
+        handleAddToCart={this.handleAddToCart}
+        handleSelect={this.handleSelect}
+        cart={this.state.cart}
+        key={Math.random()}
+      />
     ));
 
     return (
@@ -203,11 +222,7 @@ class MusicStore extends Component {
         />
         <div className="store-header">
           <div className="store-header-left">
-            <img
-              className="store-logo"
-              src={logo}
-              alt="logo"
-            />
+            <img className="store-logo" src={logo} alt="logo" />
             <p className="player-info">{`Total Beats: ${playlist.length}  `}</p>
 
             <p className="player-info">Total Plays: 1.2M </p>

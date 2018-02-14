@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactPixel from "react-facebook-pixel";
 
 // IMPORT MODULES
 import axios from "axios";
@@ -8,6 +9,8 @@ import axios from "axios";
 // IMPORT CSS
 import "./Success.css";
 
+import { pixelId } from "../../config";
+ReactPixel.init(pixelId);
 class Success extends Component {
   constructor(props) {
     super(props);
@@ -21,7 +24,11 @@ class Success extends Component {
       .get("/api/purchases")
       .then(response => {
         console.log(response);
-        this.setState({ purchases: response.data });
+        this.setState({ purchases: response.data }, () =>
+          ReactPixel.trackCustom("beats-purchased", {
+            purchasedBeats: response.data
+          })
+        );
       })
       .catch(console.log);
   }
