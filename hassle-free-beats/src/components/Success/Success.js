@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ReactPixel from "react-facebook-pixel";
 
 // IMPORT MODULES
 import axios from "axios";
@@ -9,8 +8,9 @@ import axios from "axios";
 // IMPORT CSS
 import "./Success.css";
 
-import { pixelId } from "../../config";
-ReactPixel.init(pixelId);
+function gtag() {
+  window.dataLayer.push(arguments);
+}
 class Success extends Component {
   constructor(props) {
     super(props);
@@ -23,11 +23,15 @@ class Success extends Component {
     axios
       .get("/api/purchases")
       .then(response => {
-        console.log(response);
-        this.setState({ purchases: response.data }, () =>
-          ReactPixel.trackCustom("beats-purchased", {
+        this.setState({ purchases: response.data }, () => {
+          window.fbq("trackCustom", "beats-purchased", {
             purchasedBeats: response.data
           })
+          gtag('event', 'purchasedBeat', {
+            'event_category': 'purchasedBeats',
+            'event_label': response.data
+          });
+        }
         );
       })
       .catch(console.log);

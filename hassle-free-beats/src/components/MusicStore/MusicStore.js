@@ -6,9 +6,6 @@ import FlatButton from "material-ui/FlatButton";
 import IconButton from "material-ui/IconButton";
 import Dialog from "material-ui/Dialog";
 import axios from "axios";
-import ReactPixel from "react-facebook-pixel";
-
-import { pixelId } from "../../config";
 
 import Cart from "../Cart/Cart";
 import StoreItem from "./StoreItem/StoreItem";
@@ -16,7 +13,9 @@ import StoreItem from "./StoreItem/StoreItem";
 import "./MusicStore.css";
 import logo from "../../assets/header-logo-min.jpg";
 
-ReactPixel.init(pixelId);
+function gtag() {
+  window.dataLayer.push(arguments);
+}
 class MusicStore extends Component {
   constructor(props) {
     super(props);
@@ -88,8 +87,12 @@ class MusicStore extends Component {
         .catch(console.log);
     }
 
-    ReactPixel.trackCustom("add beat to cart", {
-      beat_title: beat
+    window.fbq("trackCustom", "addBeatToCart", {
+      title: beat
+    });
+    gtag('event', 'addToCart', {
+      'event_category': 'addSongToCart',
+      'event_label': beat
     });
   }
 
@@ -175,8 +178,13 @@ class MusicStore extends Component {
         this.audioContainer.play();
       }
     );
-    ReactPixel.trackCustom("listen to song", {
+    window.fbq("trackCustom", "listen-to-song", {
       title: this.props.playlist[index].title
+    });
+
+    gtag('event', 'listenToSong', {
+      'event_category': 'listenToSongInStore',
+      'event_label': this.props.playlist[index].title
     });
   }
 
@@ -279,7 +287,7 @@ class MusicStore extends Component {
           <i
             className={`icon fa fa-${
               this.state.play ? "pause" : "play"
-            } control-icon`}
+              } control-icon`}
             style={{ color: "rgb(74, 74, 74)" }}
             onClick={this.handleToggle.bind(this)}
           />
