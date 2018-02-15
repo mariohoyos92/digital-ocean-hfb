@@ -38,10 +38,14 @@
   height: 90%;
   width: 35%;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-left: 3px;
   font-size: 0.8em;
   padding-top: 2px;
+}
+
+.player-info{
+  margin-left: 5px;
 }
 
 .store-header-right {
