@@ -64,23 +64,28 @@ class Header extends Component {
             </Link>
           </MenuItem>
           <MenuItem onClick={this.handleDrawer}>
-            <Link to="/about">
+            <HashLink to="/#about-us">
               <FlatButton style={{ color: "black" }} label="About Us" />
-            </Link>
+            </HashLink>
           </MenuItem>
           <MenuItem onClick={this.handleDrawer}>
-            <Link to="/FAQ">
+            <HashLink to="/#faq">
               <FlatButton style={{ color: "black" }} label="FAQ" />
-            </Link>
+            </HashLink>
           </MenuItem>
           <MenuItem onClick={this.handleDrawer}>
-            <Link to="contact">
+            <HashLink to="/#contact">
               <FlatButton style={{ color: "black" }} label="Contact" />
-            </Link>
+            </HashLink>
           </MenuItem>
-          <MenuItem>
+          <MenuItem onClick={this.handleDrawer}>
             <HashLink to="/#musicStore">
-              <RaisedButton primary={true} labelColor={"#fbfffe"} label={"Shop Now"} style={{ boxShadow: "none" }} />
+              <RaisedButton
+                primary={true && true}
+                labelColor={"#fbfffe"}
+                label={"Shop Now"}
+                style={{ boxShadow: "none" }}
+              />
             </HashLink>
           </MenuItem>
         </Drawer>
@@ -88,17 +93,21 @@ class Header extends Component {
           <Link to="/">
             <FlatButton style={{ color: "white" }} label="Home" />
           </Link>
-          <Link to="/about">
+          <HashLink to="/#about-us">
             <FlatButton style={{ color: "white" }} label="About Us" />
-          </Link>
-          <Link to="/FAQ">
+          </HashLink>
+          <HashLink to="/#faq">
             <FlatButton style={{ color: "white" }} label="FAQ" />
-          </Link>
-          <Link to="contact">
+          </HashLink>
+          <HashLink to="/#contact">
             <FlatButton style={{ color: "white" }} label="Contact" />
-          </Link>
+          </HashLink>
           <HashLink to="/#musicStore">
-            <RaisedButton primary={true} labelColor={"#fbfffe"} label={"Shop Now"} style={{ boxShadow: "none" }} />
+            <RaisedButton
+              primary={true && true}
+              labelColor={"#fbfffe"}
+              label={"Shop Now"}
+            />
           </HashLink>{" "}
         </div>
       </div>

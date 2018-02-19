@@ -12,7 +12,7 @@ import aboutLogo from "../../assets/fullsizeoutput_b.jpeg";
 class About extends Component {
   render() {
     return (
-      <div className="about-container">
+      <div className="about-container" id="about-us">
         <img className="about-logo" src={aboutLogo} alt="logo" />
         <h1>Buy rap and hip hop beats without the hassle</h1>
         <p className="about-blurb">
