@@ -22,3 +22,9 @@ body {
 .triplet {
   font-size: 5em !important;
 }
+
+@media (max-width: 623px) {
+  .hamburger {
+  font-size: 2em !important;
+}
+}

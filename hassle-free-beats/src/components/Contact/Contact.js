@@ -124,63 +124,63 @@ export default class Contact extends Component {
         </p>
       </div>
     ) : (
-      <div>
-        <h1>HAVE A QUESTION? WE HAVE AN ANSWER!</h1>
-        <form className="contact-form">
-          <TextField
-            hintText={`eg. "John Doe"`}
-            floatingLabelText="Your Name (required)"
-            onChange={this.handleName}
-            value={this.state.name}
-            errorText={this.state.nameError}
-          />
-          <br />
-          <TextField
-            hintText={`eg. "johndoe@gmail.com"`}
-            floatingLabelText="Your Email (required)"
-            onChange={this.handleEmail}
-            value={this.state.email}
-            errorText={this.state.emailError}
-          />
-          <br />
-          <TextField
-            hintText={`eg. "Question about hot beats"`}
-            floatingLabelText="Email Subject"
-            onChange={this.handleSubject}
-            value={this.state.subject}
-          />
-          <br />
-          <TextField
-            hintText={`eg. "I love Hassle-Free-Beats"`}
-            floatingLabelText="Your Message"
-            multiLine={true}
-            onChange={this.handleBody}
-            value={this.state.emailBody}
-            rows={1}
-            errorText={this.state.messageError}
-          />
-          <br />
-          <br />
-          <RaisedButton
-            primary={true}
-            labelColor={"#fbfffe"}
-            label={"SEND"}
-            onClick={this.handleSubmit}
-            style={{ marginBottom: "10px" }}
-          />
-          <br />
-        </form>
-        <p>
-          Email:{" "}
-          <a
-            href="mailto:support@hasslefreebeats.com"
-            style={{ color: "#F8AA15" }}
-          >
-            support@hasslefreebeats.com
+        <div>
+          <h1>Have a question? We have an answer!</h1>
+          <form className="contact-form">
+            <TextField
+              hintText={`eg. "John Doe"`}
+              floatingLabelText="Your Name"
+              onChange={this.handleName}
+              value={this.state.name}
+              errorText={this.state.nameError}
+            />
+            <br />
+            <TextField
+              hintText={`eg. "johndoe@gmail.com"`}
+              floatingLabelText="Your Email"
+              onChange={this.handleEmail}
+              value={this.state.email}
+              errorText={this.state.emailError}
+            />
+            <br />
+            <TextField
+              hintText={`eg. "Question about hot beats"`}
+              floatingLabelText="Email Subject"
+              onChange={this.handleSubject}
+              value={this.state.subject}
+            />
+            <br />
+            <TextField
+              hintText={`eg. "I love Hassle-Free-Beats"`}
+              floatingLabelText="Your Message"
+              multiLine={true}
+              onChange={this.handleBody}
+              value={this.state.emailBody}
+              rows={1}
+              errorText={this.state.messageError}
+            />
+            <br />
+            <br />
+            <RaisedButton
+              primary={true}
+              labelColor={"#fbfffe"}
+              label={"SEND"}
+              onClick={this.handleSubmit}
+              style={{ marginBottom: "10px" }}
+            />
+            <br />
+          </form>
+          <p>
+            Email:{" "}
+            <a
+              href="mailto:support@hasslefreebeats.com"
+              style={{ color: "#F8AA15" }}
+            >
+              support@hasslefreebeats.com
           </a>
-        </p>
-      </div>
-    );
+          </p>
+        </div>
+      );
     return (
       <div className="contact-container">
         <Card className="contact-card">{cardDisplay}</Card>

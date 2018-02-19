@@ -2,9 +2,9 @@ import React from 'react';
 import IconButton from 'material-ui/IconButton';
 import Divider from 'material-ui/Divider';
 
-export default ({track, playlist, activeMusicIndex, cart, handleSelect, handleAddToCart}) => {
-    const {title, artist} = track;
-    return(
+export default ({ track, playlist, activeMusicIndex, cart, handleSelect, handleAddToCart }) => {
+    const { title, artist } = track;
+    return (
         <div key={title}>
             <div
                 className="store-item"
@@ -20,7 +20,10 @@ export default ({track, playlist, activeMusicIndex, cart, handleSelect, handleAd
                     <p className="track-genre">{artist}</p>
                 </div>
                 <div className="store-item-right">
-                    <span className="struck">$50.00  {"  "}</span><span>$25.00</span>
+                    {
+                        // <span className="struck">$50.00  {"  "}</span>
+                    }
+                    <span>$10.00</span>
                     <IconButton
                         iconClassName={cart.indexOf(track.title) === -1 ? "fa fa-plus-square" : "fa fa-minus-square"}
                         iconStyle={

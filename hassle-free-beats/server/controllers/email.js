@@ -12,7 +12,6 @@ module.exports = {
     };
 
     mailgun.messages().send(data, (error, body) => {
-      console.log(body);
       if (body.message === "Queued. Thank you.") {
         res.status(200).json("message sent");
       } else {

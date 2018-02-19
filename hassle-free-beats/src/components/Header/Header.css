@@ -42,7 +42,7 @@
     height: 100%;
     width: 100%;
     text-align: left;
-    font-size: 4em;
+    font-size: 2em;
     padding: 3%;
     padding-top: 4%;
   }
@@ -61,6 +61,7 @@
   }
 
   .header {
+    height: 5vh;
     display: flex;
     align-items: center;
     justify-content: flex-start;

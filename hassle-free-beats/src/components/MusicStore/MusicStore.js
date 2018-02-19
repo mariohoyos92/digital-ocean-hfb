@@ -9,6 +9,7 @@ import axios from "axios";
 
 import Cart from "../Cart/Cart";
 import StoreItem from "./StoreItem/StoreItem";
+import Checkout from '../Cart/Checkout'
 
 import "./MusicStore.css";
 import logo from "../../assets/header-logo-min.jpg";
@@ -148,7 +149,9 @@ class MusicStore extends Component {
   }
 
   handleSelect(index) {
-    this._playMusic(index);
+    this.state.activeMusicIndex === index ?
+      this.handleToggle() :
+      this._playMusic(index);
   }
 
   handlePrev() {
@@ -237,7 +240,7 @@ class MusicStore extends Component {
             <p className="player-info">Total Plays: 1.2M </p>
           </div>
           <div className="store-header-right">
-            <span>${25 * this.state.cart.length}.00 (usd)</span>
+            <span>${10 * this.state.cart.length}.00 (usd)</span>
             <IconButton
               iconClassName="fa fa-shopping-cart"
               iconStyle={{ iconHoverColor: "#faa916" }}
@@ -254,13 +257,11 @@ class MusicStore extends Component {
                   primary={true}
                   onClick={this.handleClose}
                 />,
-                <Link to={"/checkout"}>
-                  <RaisedButton
-                    label="Checkout Now"
-                    primary={true}
-
-                  />
-                </Link>
+                <Checkout
+                  name={"Hassle Free Beats"}
+                  description={"No Waiting, No Royalties, No Limits"}
+                  amount={10 * this.state.cart.length}
+                />
               ]}
               modal={true}
               open={this.state.open}
@@ -268,14 +269,11 @@ class MusicStore extends Component {
             >
               <Cart />
             </Dialog>
-            <Link to="/checkout">
-              <RaisedButton
-                primary={true}
-                labelColor={"#fbfffe"}
-                label={"CHECKOUT"}
-                style={{ boxShadow: "none" }}
-              />
-            </Link>
+            <Checkout
+              name={"Hassle Free Beats"}
+              description={"No Waiting, No Royalties, No Limits"}
+              amount={10 * this.state.cart.length}
+            />
           </div>
         </div>
         <div className="beats-container">{storeItems}</div>
