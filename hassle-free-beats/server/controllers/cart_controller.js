@@ -22,6 +22,7 @@ module.exports = {
       res.status(200).json(req.session.cart);
     }
     else {
+      res.append('Cache-Control', 'max-age=86400000')
       res.status(200).json({ tracks: [] })
     }
   },
