@@ -30,7 +30,8 @@ class MusicStore extends Component {
       totalPrice: 0,
       cart: [],
       play: false,
-      open: false
+      open: false,
+      mobile: false
     };
 
     this.handleOpen = this.handleOpen.bind(this);
@@ -48,9 +49,12 @@ class MusicStore extends Component {
     audioContainer.addEventListener("ended", this.end.bind(this));
 
     this.setState({ playlist: this.props.playlist });
+
     axios.get("api/cart").then(response => {
       this.setState({ cart: response.data.tracks });
     });
+
+    if (window.innerWidth < 623) this.setState({ mobile: true });
   }
   componentWillUnmount() {
     const audioContainer = this.audioContainer;
@@ -218,6 +222,7 @@ class MusicStore extends Component {
         handleSelect={this.handleSelect}
         cart={this.state.cart}
         key={Math.random()}
+        mobile={this.state.mobile}
       />
     ));
 
@@ -244,7 +249,7 @@ class MusicStore extends Component {
             <IconButton
               iconClassName="fa fa-shopping-cart"
               iconStyle={{ iconHoverColor: "#faa916" }}
-              tooltip={"Shopping Cart"}
+              tooltip={!this.state.mobile && "Shopping Cart"}
               touch={true}
               tooltipPosition="top-right"
               onClick={this.handleOpen}

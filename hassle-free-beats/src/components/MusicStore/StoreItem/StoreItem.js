@@ -2,7 +2,7 @@ import React from 'react';
 import IconButton from 'material-ui/IconButton';
 import Divider from 'material-ui/Divider';
 
-export default ({ track, playlist, activeMusicIndex, cart, handleSelect, handleAddToCart }) => {
+export default ({ track, playlist, activeMusicIndex, cart, handleSelect, handleAddToCart, mobile }) => {
     const { title, artist } = track;
     return (
         <div key={title}>
@@ -34,7 +34,10 @@ export default ({ track, playlist, activeMusicIndex, cart, handleSelect, handleA
                                 }
                                 : { color: "#faa916" }
                         }
-                        tooltip={cart.indexOf(track.title) === -1 ? "Add To Cart" : "Remove From Cart"}
+                        tooltip={
+                            cart.indexOf(track.title) === -1
+                                ? !mobile && "Add To Cart"
+                                : !mobile && "Remove From Cart"}
                         touch={true}
                         tooltipPosition="bottom-left"
                         onClick={(e) => handleAddToCart(track.title, e)}
