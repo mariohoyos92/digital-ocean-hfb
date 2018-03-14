@@ -11,7 +11,7 @@ import Dialog from "material-ui/Dialog";
 // IMPORT COMPONENTS
 import Header from "../Header/Header";
 import MusicStore from "../MusicStore/MusicStore";
-import Testimonials from "../Testimonials/Testimonials";
+// import Testimonials from "../Testimonials/Testimonials";
 import EmailCapture from "../EmailCapture/EmailCapture";
 import FAQ from '../FAQ/FAQ';
 import About from '../About/About';

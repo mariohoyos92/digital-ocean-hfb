@@ -8,7 +8,6 @@ import FlatButton from "material-ui/FlatButton";
 import Drawer from "material-ui/Drawer";
 import MenuItem from "material-ui/MenuItem";
 
-import LoginButton from "../LoginButton/LoginButton";
 
 // IMPORT CSS
 import "./Header.css";

@@ -7,8 +7,8 @@ export default ({ track, playlist, activeMusicIndex, cart, handleSelect, handleA
     return (
         <div key={title}>
             <div
+                data-track={playlist.indexOf(track)}
                 className="store-item"
-                onClick={() => handleSelect(playlist.indexOf(track))}
                 style={{
                     backgroundColor:
                         activeMusicIndex === playlist.indexOf(track) &&
