@@ -64,7 +64,7 @@ class Home extends Component {
         <Header />
         <div className="splash">
           <div className="splash-logo">
-            <img className="logo" onLoad={() => this.setState({ imgLoaded: true })} src={"http://d23vnsiihm040t.cloudfront.net/HassleFreeBeats+(2).png"} alt="logo" />
+            <img className="logo" onLoad={() => this.setState({ imgLoaded: true })} src={"https://d23vnsiihm040t.cloudfront.net/HassleFreeBeats+(2).png"} alt="logo" />
           </div>
         </div>
         {

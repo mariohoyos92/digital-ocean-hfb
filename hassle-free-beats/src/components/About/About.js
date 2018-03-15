@@ -13,7 +13,7 @@ class About extends Component {
   render() {
     return (
       <div className="about-container" id="about-us">
-        <img className="about-logo" src={"http://d23vnsiihm040t.cloudfront.net/fullsizeoutput_b.jpeg"} alt="logo" />
+        <img className="about-logo" src={"https://d23vnsiihm040t.cloudfront.net/fullsizeoutput_b.jpeg"} alt="logo" />
         <h1>Buy rap and hip hop beats without the hassle</h1>
         <p className="about-blurb">
           Hassle-Free-Beats was created with the vision of allowing artists to

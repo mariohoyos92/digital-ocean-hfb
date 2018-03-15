@@ -33,7 +33,7 @@ class Header extends Component {
           <Link to="/">
             <img
               className="header-image"
-              src={"http://d23vnsiihm040t.cloudfront.net/header-logo-min.jpg"}
+              src={"https://d23vnsiihm040t.cloudfront.net/header-logo-min.jpg"}
               alt="logo"
             />
           </Link>

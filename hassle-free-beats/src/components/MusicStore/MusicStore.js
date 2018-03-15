@@ -237,7 +237,7 @@ class MusicStore extends Component {
         />
         <div className="store-header">
           <div className="store-header-left">
-            <img className="store-logo" src={"http://d23vnsiihm040t.cloudfront.net/header-logo-min.jpg"} alt="logo" />
+            <img className="store-logo" src={"https://d23vnsiihm040t.cloudfront.net/header-logo-min.jpg"} alt="logo" />
             {
               //  <p className="player-info">{`Total Beats: ${playlist.length}  `}</p>
             }
