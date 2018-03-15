@@ -50,7 +50,8 @@ class Home extends Component {
     });
   }
 
-  handleEmailModalToggle() {
+  handleEmailModalToggle(e) {
+    e && e.stopPropagation();
     this.setState({
       emailModalOpen: !this.state.emailModalOpen
     });
@@ -71,16 +72,16 @@ class Home extends Component {
             Test out our immediate delivery by letting us send you a FREE beat!
           </h2>
           <RaisedButton
-            onClick={this.handleEmailModalToggle}
+            onClick={(e) => this.handleEmailModalToggle(e)}
             label={"Send Me a Free Beat"}
             primary={true}
           />
           <Dialog
             modal={false}
             open={this.state.emailModalOpen}
-            onRequestClose={this.handleEmailModalToggle}
+            onRequestClose={(e) => this.handleEmailModalToggle(e)}
           >
-            <EmailCapture handleEmailToggle={this.handleEmailModalToggle} />
+            <EmailCapture handleEmailToggle={(e) => this.handleEmailModalToggle(e)} />
           </Dialog>
           {
             // <h1 className="mobile">Sound too good to be true?</h1>
