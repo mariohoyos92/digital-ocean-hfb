@@ -16,7 +16,7 @@ module.exports = {
       .get("db")
       .getPlaylist()
       .then(response => {
-        res.append('Cache-Control', 'max-age=86400000')
+        res.append('Cache-Control', 'max-age=864000')
         res.status(200).json(response)
       })
       .catch(res.status(500));
