@@ -64,47 +64,49 @@ class Home extends Component {
         <Header />
         <div className="splash">
           <div className="splash-logo">
-            <img className="logo" src={splashLogo} alt="logo" />
+            <img className="logo" onLoad={() => this.setState({ imgLoaded: true })} src={splashLogo} alt="logo" />
           </div>
         </div>
-        <div className="call-to-action">
-          <h2>
-            Test out our immediate delivery by letting us send you a FREE beat!
+        {
+          this.state.imgLoaded && <div className="call-to-action">
+            <h2>
+              Test out our immediate delivery by letting us send you a FREE beat!
           </h2>
-          <RaisedButton
-            onClick={(e) => this.handleEmailModalToggle(e)}
-            label={"Send Me a Free Beat"}
-            primary={true}
-          />
-          <Dialog
-            modal={false}
-            open={this.state.emailModalOpen}
-            onRequestClose={(e) => this.handleEmailModalToggle(e)}
-          >
-            <EmailCapture handleEmailToggle={(e) => this.handleEmailModalToggle(e)} />
-          </Dialog>
-          {
-            // <h1 className="mobile">Sound too good to be true?</h1>
-            //   <a
-            //     className="download-link mobile"
-            //     href="https://s3.us-east-2.amazonaws.com/hassle-free-beats-untagged-audio/Untagged+Mastered+Beats+Ready+For+Website/Motherland+-+Alt-Rap.mp3"
-            //     download
-            //   >
-            //     <h3 className="mobile">Here, have a free beat.</h3>
-            //   </a>
-            //   <h3 className="mobile">Easy enough, right?</h3>
-            //   <h3 className="mobile">
-            //     Want to be free to create AND maximize your profits?
-            //   </h3>
-            //   <RaisedButton
-            //     primary={true && true}
-            //     labelColor={"#fbfffe"}
-            //     label={"Shop Now"}
-            //     onClick={() => scrollToComponent(this.Store)}
-            //     style={{ marginBottom: "20%" }}
-            //   />
-          }
-        </div>
+            <RaisedButton
+              onClick={(e) => this.handleEmailModalToggle(e)}
+              label={"Send Me a Free Beat"}
+              primary={true}
+            />
+            <Dialog
+              modal={false}
+              open={this.state.emailModalOpen}
+              onRequestClose={(e) => this.handleEmailModalToggle(e)}
+            >
+              <EmailCapture handleEmailToggle={(e) => this.handleEmailModalToggle(e)} />
+            </Dialog>
+          </div>
+        }
+        {
+          // <h1 className="mobile">Sound too good to be true?</h1>
+          //   <a
+          //     className="download-link mobile"
+          //     href="https://s3.us-east-2.amazonaws.com/hassle-free-beats-untagged-audio/Untagged+Mastered+Beats+Ready+For+Website/Motherland+-+Alt-Rap.mp3"
+          //     download
+          //   >
+          //     <h3 className="mobile">Here, have a free beat.</h3>
+          //   </a>
+          //   <h3 className="mobile">Easy enough, right?</h3>
+          //   <h3 className="mobile">
+          //     Want to be free to create AND maximize your profits?
+          //   </h3>
+          //   <RaisedButton
+          //     primary={true && true}
+          //     labelColor={"#fbfffe"}
+          //     label={"Shop Now"}
+          //     onClick={() => scrollToComponent(this.Store)}
+          //     style={{ marginBottom: "20%" }}
+          //   />
+        }
         <div
           className="music-store"
           id="musicStore"

@@ -204,6 +204,7 @@ class MusicStore extends Component {
     return `${mins < 10 ? "0" : ""}${mins}:${secs < 10 ? "0" : ""}${secs}`;
   }
 
+
   render() {
     const { playlist } = this.props;
     const { activeMusicIndex } = this.state;
@@ -213,15 +214,14 @@ class MusicStore extends Component {
       backgroundColor: "#96031a"
     };
 
-    const storeItems = playlist.map(track => (
+    const storeItems = playlist.map((track, i) => (
       <StoreItem
         track={track}
-        playlist={playlist}
+        index={i}
         activeMusicIndex={activeMusicIndex}
         handleAddToCart={this.handleAddToCart}
-        handleSelect={this.handleSelect}
         cart={this.state.cart}
-        key={Math.random()}
+        key={track.name}
         mobile={this.state.mobile}
       />
     ));
@@ -282,7 +282,8 @@ class MusicStore extends Component {
           </div>
         </div>
         <div className="beats-container" onClick={(e) => {
-          this.handleSelect(parseInt(e.target.dataset.track, 16))
+          this.handleSelect(e.target.dataset.track
+          )
         }}>{storeItems}</div>
         <div className="player-controls">
           <div className="controls-container" />

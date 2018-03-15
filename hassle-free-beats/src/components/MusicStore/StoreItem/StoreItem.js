@@ -2,16 +2,16 @@ import React from 'react';
 import IconButton from 'material-ui/IconButton';
 import Divider from 'material-ui/Divider';
 
-export default ({ track, playlist, activeMusicIndex, cart, handleSelect, handleAddToCart, mobile }) => {
+export default ({ track, index, activeMusicIndex, cart, handleAddToCart, mobile }) => {
     const { title, artist } = track;
     return (
         <div key={title}>
             <div
-                data-track={playlist.indexOf(track)}
+                data-track={index}
                 className="store-item"
                 style={{
                     backgroundColor:
-                        activeMusicIndex === playlist.indexOf(track) &&
+                        activeMusicIndex == index &&
                         "#cccccc"
                 }}
             >
