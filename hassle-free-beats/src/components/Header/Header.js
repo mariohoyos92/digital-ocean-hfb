@@ -11,7 +11,7 @@ import MenuItem from "material-ui/MenuItem";
 
 // IMPORT CSS
 import "./Header.css";
-import headerLogo from '../../assets/header-logo-min.jpg';
+
 
 class Header extends Component {
   constructor(props) {
@@ -33,7 +33,7 @@ class Header extends Component {
           <Link to="/">
             <img
               className="header-image"
-              src={headerLogo}
+              src={"http://d23vnsiihm040t.cloudfront.net/header-logo-min.jpg"}
               alt="logo"
             />
           </Link>

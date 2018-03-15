@@ -12,7 +12,6 @@ import StoreItem from "./StoreItem/StoreItem";
 import Checkout from '../Cart/Checkout'
 
 import "./MusicStore.css";
-import logo from "../../assets/header-logo-min.jpg";
 
 function gtag() {
   window.dataLayer.push(arguments);
@@ -238,7 +237,7 @@ class MusicStore extends Component {
         />
         <div className="store-header">
           <div className="store-header-left">
-            <img className="store-logo" src={logo} alt="logo" />
+            <img className="store-logo" src={"http://d23vnsiihm040t.cloudfront.net/header-logo-min.jpg"} alt="logo" />
             {
               //  <p className="player-info">{`Total Beats: ${playlist.length}  `}</p>
             }

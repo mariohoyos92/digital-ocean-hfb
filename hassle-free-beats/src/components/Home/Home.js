@@ -19,7 +19,7 @@ import Contact from '../Contact/Contact'
 
 // IMPORT CSS
 import "./Home.css";
-import splashLogo from "../../assets/HassleFreeBeats (2).png";
+
 
 class Home extends Component {
   constructor(props) {
@@ -64,7 +64,7 @@ class Home extends Component {
         <Header />
         <div className="splash">
           <div className="splash-logo">
-            <img className="logo" onLoad={() => this.setState({ imgLoaded: true })} src={splashLogo} alt="logo" />
+            <img className="logo" onLoad={() => this.setState({ imgLoaded: true })} src={"http://d23vnsiihm040t.cloudfront.net/HassleFreeBeats+(2).png"} alt="logo" />
           </div>
         </div>
         {

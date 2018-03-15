@@ -1,7 +1,7 @@
 .splash {
   width: 100%;
   height: 90vh;
-  background-image: url("../../assets/background gradient-min.jpg");
+  background-image: url("http://d23vnsiihm040t.cloudfront.net/background+gradient-min.jpg");
 
   display: flex;
   flex-direction: column;
@@ -27,7 +27,7 @@
 }
 
 .call-to-action {
-  background-image: url("../../assets/background gradient-min.jpg");
+  background-image: url("http://d23vnsiihm040t.cloudfront.net/background+gradient-min.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -101,7 +101,7 @@
   align-items: center;
   justify-content: center;
   background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3)),
-    url("../../assets/MonitoringBoard (1)-min.jpeg");
+    url("http://d23vnsiihm040t.cloudfront.net/MonitoringBoard+(1)-min.jpeg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -119,7 +119,7 @@
 }
 
 .testimonial-header {
-  background-image: url("../../assets/background gradient-min.jpg");
+  background-image: url("http://d23vnsiihm040t.cloudfront.net/background+gradient-min.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -142,7 +142,7 @@
 }
 .info {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9)),
-    url("../../assets/MonitoringBoard (1)-min.jpeg");
+    url("http://d23vnsiihm040t.cloudfront.net/MonitoringBoard+(1)-min.jpeg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -180,7 +180,7 @@
 
 
   .call-to-action {
-  background-image: url("../../assets/background gradient-min.jpg");
+  background-image: url("http://d23vnsiihm040t.cloudfront.net/background+gradient-min.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
