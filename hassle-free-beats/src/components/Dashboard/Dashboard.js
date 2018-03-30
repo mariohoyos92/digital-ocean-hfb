@@ -7,7 +7,7 @@ import Divider from "material-ui/Divider";
 import Checkout from "../Cart/Checkout";
 import IconButton from "material-ui/IconButton";
 import { HashLink as Link } from "react-router-hash-link";
-import { RaisedButton } from "material-ui";
+import  RaisedButton  from "material-ui/RaisedButton";
 
 // IMPORT COMPONENTS
 import LoginButton from "../LoginButton/LoginButton";
